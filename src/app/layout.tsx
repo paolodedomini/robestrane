@@ -5,7 +5,7 @@ import JsonldMetaData from "@/components/metaData/jsonldmetadata";
 import meta from "../../public/data/meta-home.json";
 import Nav from "@/components/mainLayoutComponents/nav/nav";
 import CookieConsentBanner from "@/components/cookieConsent/cookieConsent";
-import Footer from "@/components/mainLayoutComponents/footer/footer";
+
 import ScrollTop from "@/components/scroll/scrollToTop";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -37,7 +37,7 @@ export default async function RootLayout({
         <CookieConsentBanner />
         <Nav />
         <SmoothScrolling>{children}</SmoothScrolling>
-        <Footer />
+
         <ScrollTop />
       </body>
       <GoogleAnalytics gaId="UA-77301206-1" />

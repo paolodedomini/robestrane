@@ -1,6 +1,5 @@
 "use client";
-import { ReactLenis } from "@studio-freight/react-lenis";
-
+import { ReactLenis } from "lenis/react";
 function SmoothScrolling({ children }: { children: React.ReactNode }) {
   // lenis options for configuration
   const lenisOptions = {

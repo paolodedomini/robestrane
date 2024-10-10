@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import navigation from "../../../../public/data/navigation.json";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 function NavBar() {
   const pathN = usePathname();
   const [mobile, setMobile] = useState(false);

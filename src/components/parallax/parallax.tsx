@@ -4,7 +4,7 @@ import { useScroll, useTransform, motion, m } from "framer-motion";
 import ExportedImage from "next-image-export-optimizer";
 import style from "./parallax.module.scss";
 import { useMediaQuery } from "react-responsive";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 import { useRouter } from "next/navigation";
 
 function Parallax({
