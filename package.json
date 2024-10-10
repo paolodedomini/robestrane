@@ -29,6 +29,7 @@
     "swiper": "^11.1.4"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.51",
     "@types/js-cookie": "^3.0.6",
     "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
@@ -36,6 +37,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "slice-machine-ui": "^2.8.1",
     "typescript": "^5"
   }
 }
