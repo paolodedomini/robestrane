@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { createClient } from "@/prismicio";
 
 type Params = { uid: string };
