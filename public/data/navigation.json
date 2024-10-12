@@ -1,24 +1,19 @@
 {
-    "it": [
+    "main": [
         {
-            "name": "Lo Studio dentistico",
-            "url": "#studio"
+            "name": "Gli strani",
+            "url": "/chi_siamo"
         },
         {
-            "name": "I trattamenti",
-            "url": "#trattamenti"
-        },
-        {
-            "name": "il team",
-            "url": "#team"
-        },
-        {
-            "name": "strumentazione e sicurezza",
-            "url": "#strumentazione"
-        },
-        {
-            "name": "contatti",
-            "url": "#contatti"
+            "name": "Privacy",
+            "url": "/privacy"
         }
+    ],
+    "filters": [
+        "design",
+        "letteratura",
+        "cinema",
+        "musica",
+        "games"
     ]
 }

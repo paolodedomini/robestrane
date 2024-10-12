@@ -1,45 +1,11 @@
 .header {
-  position: absolute;
   padding: 0 1rem;
-  top: 0;
+
   z-index: 200;
-  left: 50%;
-  transform: translateX(-50%);
+
   width: 100%;
   background-color: white;
-  &.scrolling {
-    background-color: $blue;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: fromTop 1s ease-in-out;
-    .navMobile {
-      ul li a {
-        color: $blue;
-        &:hover {
-          color: $blue;
-        }
-      }
-    }
-    .burger {
-      color: white;
-    }
-    img {
-      width: 200px;
-      height: auto;
-    }
-    div ul li a {
-      color: white;
-      &:hover {
-        color: white;
-      }
-    }
-    .mainNavBar {
-      padding: 1rem 0 1rem 0;
-    }
-  }
+
   &__home {
     background: linear-gradient(rgb(3, 17, 33) 7%, rgb(50 92 175 / 0%) 100%);
     .mainNavBar {
@@ -62,7 +28,7 @@
   .mainNavBar {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+
     margin: 0 auto;
     color: white;
     font-size: $size-navbar;
@@ -70,18 +36,17 @@
     text-transform: uppercase;
     align-items: flex-end;
     gap: 2rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+    padding: 2rem;
     letter-spacing: 1px;
     @media #{$desktop} {
       font-size: 13px;
     }
     &__logo {
       img {
-        width: 300px;
+        width: 90px;
         display: block;
         @media #{$tablet} {
-          width: 200px;
+          width: 90px;
           height: auto;
         }
       }
@@ -179,7 +144,6 @@
     }
   }
   .burger {
-    display: none;
     font-size: 1.5rem;
     color: $blue;
     &__inner {

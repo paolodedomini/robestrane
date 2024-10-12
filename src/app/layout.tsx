@@ -1,4 +1,4 @@
-import { Roboto_Condensed } from "next/font/google";
+import { Alice } from "next/font/google";
 import "@/sass/all.scss";
 import SmoothScrolling from "@/components/scroll/smoothScrolling";
 import JsonldMetaData from "@/components/metaData/jsonldmetadata";
@@ -9,10 +9,10 @@ import CookieConsentBanner from "@/components/cookieConsent/cookieConsent";
 import ScrollTop from "@/components/scroll/scrollToTop";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const inter = Roboto_Condensed({
+const inter = Alice({
+  weight: "400",
+  variable: "--font-main",
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "700"],
 });
 
 /** FUNZIONE NEXT PER INSERIRE I METADATA NELL' HEAD */

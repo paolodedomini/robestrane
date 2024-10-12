@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import navigation from "../../../../public/data/navigation.json";
 import { useLenis } from "lenis/react";
+
 function NavBar() {
   const pathN = usePathname();
   const [mobile, setMobile] = useState(false);
@@ -16,8 +17,8 @@ function NavBar() {
   // funzione per gestire lo scroll con smooth scroll LENIS
   const scroll = useLenis();
 
-  const t = navigation["it"];
-
+  const filters = navigation["filters"];
+  const mainNav = navigation["main"];
   function isHome() {
     if (pathN === "/") {
       return true;
@@ -51,19 +52,9 @@ function NavBar() {
         <div className={style.mainNavBar__logo}>
           <Link href="/">
             {!scrolling ? (
-              <img
-                src="/image/logo-studio-dentistico-vincenzi.png"
-                width={300}
-                height={58}
-                alt="logo"
-              />
+              <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             ) : (
-              <img
-                src="/image/dott-vincenti-logo.png"
-                width={300}
-                height={58}
-                alt="logo"
-              />
+              <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             )}
           </Link>
         </div>
@@ -71,50 +62,24 @@ function NavBar() {
           className={`${style.mainNavBar__navBlock} ${style.mainNavBar__inner}`}
         >
           <ul className={style.mainNavBar__navBlock__nav}>
-            {t.map(
-              (
-                item: {
-                  name?: string;
-                  url?: string;
-                  sub?: { name: string; url: string }[];
-                },
-                index
-              ) => (
-                <li
-                  className={`${
-                    pathN.includes(item.url || "") && style.activeLink
-                  }`}
-                  key={index}
+            {filters.map((item, index) => (
+              <li
+                className={`${pathN.includes(item || "") && style.activeLink}`}
+                key={index}
+              >
+                <Link
+                  href={{
+                    pathname: "/",
+                    query: { filter: item },
+                  }}
                 >
-                  <a
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scroll?.scrollTo(item.url || "", { offset: -100 });
-                    }}
-                    href={item.url || ""}
-                  >
-                    {item.name}
-                  </a>
-                  {item.sub && (
-                    <ul className={style.subNav}>
-                      {item.sub?.map((subItem, index) => (
-                        <li key={index}>
-                          <Link href={subItem.url || ""}>{subItem.name}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              )
-            )}
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-        <div
-          className={`${style.burger} ${
-            isHome() ? style.burger__home : style.burger__inner
-          }`}
-          onClick={() => setMobile(true)}
-        >
+        <div className={`${style.burger}`} onClick={() => setMobile(true)}>
           <RxHamburgerMenu />
         </div>
         <AnimatePresence>
@@ -143,7 +108,7 @@ function NavBar() {
               </a>
 
               <ul className={style.navMobile__nav}>
-                {t.map((item, index) => (
+                {mainNav.map((item, index) => (
                   <li
                     className={`${
                       pathN.includes(item.url || "") && style.activeLink
