@@ -12,10 +12,6 @@ ul {
   margin: 0;
 }
 main {
-  margin-top: 110px;
-  @media #{$tablet} {
-    margin-top: 82px;
-  }
   @media #{$phone} {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -56,7 +52,9 @@ button {
 }
 .title {
   color: #0073a9;
-  font-family: Roboto Condensed, sans-serif;
+  font-family:
+    Roboto Condensed,
+    sans-serif;
   font-size: 55px;
   letter-spacing: 1px;
   text-transform: uppercase;

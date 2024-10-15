@@ -2,14 +2,12 @@
 
 import styles from "./page.module.scss";
 import { createClient } from "@/prismicio";
-import ExportedImage from "next-image-export-optimizer";
-import generic from "../../public/data/generic.json";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import MainList from "@/components/lists/mainList";
 import AnimatedSection from "@/components/mainLayoutComponents/sections/animatedSection";
+import { getPostDataByPage, getPostByCategory } from "@/utils/getData";
 /**
  * PAGINA
  * Utilizzare le pagine per fetchare i dati e passarli ai componenti
@@ -18,42 +16,34 @@ import AnimatedSection from "@/components/mainLayoutComponents/sections/animated
  */
 
 export default function Home({ params }: { params: any }) {
+  const searchParams = useSearchParams();
+  const categoryByUrlParams = searchParams.get("filter");
   const [post, setPost] = useState<any>([]);
-
-  const mapData = generic.generics;
-  const HeroImage =
-    "/image/studio-dentistico-dottor-vincenzi-slideshow_overlay-25.jpg";
-  const client = createClient();
+  const [page, setPage] = useState(1);
+  const [postImage, setPostImage] = useState<string>("");
 
   useEffect(() => {
-    async function getPostData() {
-      try {
-        const dataPage = await client.getByType("post", {
-          pageSize: 5,
-          page: 1,
-        });
-        const data = dataPage.results;
-        if (data) {
-          setPost(data);
-        } else {
-          throw new Error("No data found");
-        }
-      } catch (error) {
-        console.log(error);
-        notFound();
-      }
-    }
-    getPostData();
+    getPostByCategory(categoryByUrlParams, 5, 1).then((data) => {
+      console.log(data, "data");
+      setPost(data);
+    });
   }, []);
-
-  const currentPage = useSearchParams().get("page");
-  console.log(post, "dataPage");
-
+  console.log(post, "postImage");
   return (
     <main className={styles.main}>
       <AnimatedSection>
-        <MainList list={post} />
+        <MainList list={post} setPostImage={setPostImage} />
       </AnimatedSection>
+      {postImage && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={postImage}
+          width={400}
+          height={400}
+          className={styles.postImage}
+          alt="post image"
+        />
+      )}
     </main>
   );
 }
