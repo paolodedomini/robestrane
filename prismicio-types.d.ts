@@ -58,19 +58,6 @@ interface PostDocumentData {
   article: prismic.RichTextField;
 
   /**
-   * categories field in *post*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: categories
-   * - **API ID Path**: post.categories
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  categories: prismic.SelectField<
-    "Letteratura" | "Design" | "Cinema" | "Musica" | "Games"
-  >;
-
-  /**
    * external link field in *post*
    *
    * - **Field Type**: Group

@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { useScroll, useTransform, motion, m } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import ExportedImage from "next-image-export-optimizer";
 import style from "./parallax.module.scss";
 import { useMediaQuery } from "react-responsive";

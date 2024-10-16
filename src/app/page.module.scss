@@ -1,10 +1,14 @@
 .postImage {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: auto;
+  right: 3rem;
+  width: 50%;
   z-index: -1;
-  animation: fadeIn 1s;
+  animation: fadeIn 1s forwards;
+  height: 710px;
+  object-fit: cover;
+  object-position: left;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @keyframes fadeIn {
   0% {

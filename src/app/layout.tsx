@@ -1,4 +1,4 @@
-import { Alice } from "next/font/google";
+import { Alice, Open_Sans } from "next/font/google";
 import "@/sass/all.scss";
 import SmoothScrolling from "@/components/scroll/smoothScrolling";
 import JsonldMetaData from "@/components/metaData/jsonldmetadata";
@@ -12,6 +12,12 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Alice({
   weight: "400",
   variable: "--font-main",
+  subsets: ["latin"],
+});
+
+const paragraph = Open_Sans({
+  weight: "400",
+  variable: "--font-paragraph",
   subsets: ["latin"],
 });
 
@@ -33,7 +39,7 @@ export default async function RootLayout({
         <JsonldMetaData metadata={meta} />
         <link rel="icon" href="/image/favicon.ico" />
       </head>
-      <body className={inter.variable}>
+      <body className={`${inter.variable} ${paragraph.variable}`}>
         <CookieConsentBanner />
         <Nav />
         <SmoothScrolling>{children}</SmoothScrolling>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  exclude: ["/api/*", "/slice-simulator/*"],
+  exclude: ["/api/*"],
   output: "export",
   images: {
     loader: "custom",

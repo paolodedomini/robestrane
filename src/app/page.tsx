@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import MainList from "@/components/lists/mainList";
-import AnimatedSection from "@/components/mainLayoutComponents/sections/animatedSection";
-import { getPostDataByPage, getPostByCategory } from "@/utils/getData";
+import { getPostFiltered, getPostDataByPage } from "@/utils/getData";
+import { capitalizeFirstLetter } from "@/utils/generic";
 /**
  * PAGINA
  * Utilizzare le pagine per fetchare i dati e passarli ai componenti
@@ -23,17 +23,26 @@ export default function Home({ params }: { params: any }) {
   const [postImage, setPostImage] = useState<string>("");
 
   useEffect(() => {
-    getPostByCategory(categoryByUrlParams, 5, 1).then((data) => {
-      console.log(data, "data");
-      setPost(data);
-    });
-  }, []);
-  console.log(post, "postImage");
+    if (!categoryByUrlParams) {
+      getPostDataByPage(5, page, setPost);
+    } else {
+      getPostFiltered(
+        capitalizeFirstLetter(categoryByUrlParams),
+        5,
+        1,
+        setPost
+      );
+    }
+  }, [categoryByUrlParams]);
+
   return (
     <main className={styles.main}>
-      <AnimatedSection>
-        <MainList list={post} setPostImage={setPostImage} />
-      </AnimatedSection>
+      {post.results ? (
+        <MainList list={post.results} setPostImage={setPostImage} />
+      ) : (
+        <p>Loading...</p>
+      )}
+
       {postImage && (
         // eslint-disable-next-line @next/next/no-img-element
         <img

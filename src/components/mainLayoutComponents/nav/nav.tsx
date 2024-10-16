@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import navigation from "../../../../public/data/navigation.json";
 import { useLenis } from "lenis/react";
+import genericData from "../../../../public/data/generic.json";
 
 function NavBar() {
   const pathN = usePathname();
@@ -44,6 +45,8 @@ function NavBar() {
     setMobile(false);
   }, [pathN]);
 
+  const categorie = genericData.generics.categorie;
+
   return (
     <header
       className={`${style.header}  ${scrolling ? style.scrolling : null}`}
@@ -57,26 +60,41 @@ function NavBar() {
               <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             )}
           </Link>
+          <span>&#125; Pensieri strani su robe strane</span>
         </div>
         <div
           className={`${style.mainNavBar__navBlock} ${style.mainNavBar__inner}`}
         >
           <ul className={style.mainNavBar__navBlock__nav}>
-            {filters.map((item, index) => (
-              <li
-                className={`${pathN.includes(item || "") && style.activeLink}`}
-                key={index}
-              >
-                <Link
-                  href={{
-                    pathname: "/",
-                    query: { filter: item },
-                  }}
+            {filters.map((item, index) => {
+              const imageData = categorie.find((categoria) => {
+                return categoria.nome.toLocaleLowerCase() === item;
+              });
+
+              return (
+                <li
+                  className={`${pathN.includes(item || "") && style.activeLink}`}
+                  key={index}
                 >
-                  {item}
-                </Link>
-              </li>
-            ))}
+                  <Link
+                    href={{
+                      pathname: "/",
+                      query: { filter: item },
+                    }}
+                  >
+                    <span>
+                      <ExportedImage
+                        src={"/image/" + imageData?.image}
+                        alt={imageData?.nome || "categoria"}
+                        width={21}
+                        height={21}
+                      />
+                    </span>{" "}
+                    <div>{item}</div>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className={`${style.burger}`} onClick={() => setMobile(true)}>
@@ -99,10 +117,10 @@ function NavBar() {
                 <RxCross2 />
               </div>
               <a href="/">
-                <ExportedImage
-                  src="/image/logo-studio-dentistico-vincenzi.png"
-                  width={220}
-                  height={40}
+                <img
+                  src={"/image/logo.svg"}
+                  width={88}
+                  height={95}
                   alt="logo"
                 />
               </a>

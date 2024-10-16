@@ -28,13 +28,13 @@
   .mainNavBar {
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     margin: 0 auto;
     color: white;
     font-size: $size-navbar;
     font-weight: 700;
     text-transform: capitalize;
-    align-items: flex-end;
+
     gap: 2rem;
     padding: 2rem;
     letter-spacing: 1px;
@@ -42,6 +42,11 @@
       font-size: 13px;
     }
     &__logo {
+      display: flex;
+      letter-spacing: 0;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+
       img {
         width: 90px;
         display: block;
@@ -49,6 +54,9 @@
           width: 90px;
           height: auto;
         }
+      }
+      span {
+        color: #678c96;
       }
     }
     &__home {
@@ -61,7 +69,7 @@
         background-color: $navyBlue;
       }
       ul li a {
-        color: $blue;
+        color: black;
       }
       .mainNavBar__navBlock__topData {
         color: $navyBlue;
@@ -86,8 +94,16 @@
       }
       &__nav {
         display: flex;
-        gap: 15px;
+        gap: 1rem;
         position: relative;
+
+        li a {
+          font-size: 1.2rem;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          line-height: 0;
+        }
 
         .hasSub {
           padding-bottom: 1rem;
