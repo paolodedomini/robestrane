@@ -38,7 +38,11 @@ export default function Home({ params }: { params: any }) {
   return (
     <main className={styles.main}>
       {post.results ? (
-        <MainList list={post.results} setPostImage={setPostImage} />
+        <MainList
+          list={post.results}
+          setPostImage={setPostImage}
+          categoryByUrlParams={categoryByUrlParams}
+        />
       ) : (
         <p>Loading...</p>
       )}
