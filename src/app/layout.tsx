@@ -16,7 +16,7 @@ const inter = Alice({
 });
 
 const paragraph = Open_Sans({
-  weight: "400",
+  weight: ["300", "400"],
   variable: "--font-paragraph",
   subsets: ["latin"],
 });

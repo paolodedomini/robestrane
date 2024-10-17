@@ -1,13 +1,18 @@
 .socialBar {
   width: 100%;
-  max-width: 1300px;
-  margin: 1rem auto 0 auto;
-  padding: 1rem;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.5rem;
   button {
     display: inline-block;
-    margin-left: 0;
+
+    filter: saturate(10%);
+    svg {
+      height: 27px;
+      width: 30px;
+    }
   }
 }

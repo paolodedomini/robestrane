@@ -20,20 +20,11 @@ function Footer() {
         />
 
         <ul>
-          <li>
-            <a href={`tel:${t.generics.telNumber}`}>
-              {t.generics.label_tel}:{t.generics.telNumber}
-            </a>
-          </li>
-          <li>
-            {t.generics.label_iva}:{t.generics.iva}
-          </li>
-          <li>{t.generics.albo}</li>
-          <li>
-            {t.generics.label_powered}:{t.generics.powered}
-          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ul>
-        <p>{t.generics.footer_credit}</p>
       </div>
     </footer>
   );
