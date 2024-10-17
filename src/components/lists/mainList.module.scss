@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
   font-family: var(--font-main);
+  position: relative;
   li {
     font-size: 80px;
     margin: 0.5rem 0;
@@ -18,7 +19,7 @@
       margin-top: 1rem;
     }
     &.active {
-      background: rgba(255, 255, 255, 0.891);
+      background: rgba(255, 255, 255);
       width: 100%;
     }
     span {
