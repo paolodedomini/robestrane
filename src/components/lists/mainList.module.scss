@@ -1,11 +1,13 @@
 .mainList {
   max-width: 1300px;
   margin: 3rem auto;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   font-family: var(--font-main);
   position: relative;
+
   li {
     font-size: 80px;
     margin: 0.5rem 0;
@@ -34,5 +36,22 @@
         border-bottom: 1px dashed rgb(195, 66, 66);
       }
     }
+  }
+}
+.mainListNavigation {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  button {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: var(--font-main);
+    text-align: center;
+    width: 112px;
+    display: block;
+    cursor: pointer;
   }
 }

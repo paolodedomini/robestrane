@@ -29,12 +29,13 @@ export default function Home({ params }: { params: any }) {
       getPostFiltered(
         capitalizeFirstLetter(categoryByUrlParams),
         5,
-        1,
+        page,
         setPost
       );
     }
-  }, [categoryByUrlParams]);
+  }, [categoryByUrlParams, page]);
 
+  console.log(post, "postaa");
   return (
     <main className={styles.main}>
       {post.results ? (
@@ -42,6 +43,9 @@ export default function Home({ params }: { params: any }) {
           list={post.results}
           setPostImage={setPostImage}
           categoryByUrlParams={categoryByUrlParams}
+          page={page}
+          setPage={setPage}
+          totalPages={post.total_pages}
         />
       ) : (
         <p>Loading...</p>

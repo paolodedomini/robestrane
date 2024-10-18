@@ -27,6 +27,16 @@ export interface PostDocumentDataExternalLinkItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * anchorId field in *post → external link*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: id per ancora di testo
+   * - **API ID Path**: post.external_link[].anchorid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  anchorid: prismic.KeyTextField;
 }
 
 type PostDocumentDataSlicesSlice = never;

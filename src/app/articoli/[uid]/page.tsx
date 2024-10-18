@@ -23,7 +23,6 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID("post", params.uid)
     .catch(() => notFound());
-  console.log(page.data.external_link[0]?.link.url);
 
   //oggetto per la configurazione del rich text di prismic.io
   const components: JSXMapSerializer = {
@@ -47,25 +46,28 @@ export default async function Page({ params }: { params: Params }) {
       )}
       <h1>{page.data.title}</h1>
       <PrismicRichText field={page.data.article} components={components} />
-      <div className={style.riferimenti}>
-        <h2>Riferimenti</h2>
-        <ul>
-          {page.data.external_link.map((item, index) => {
-            const link: any = item.link;
-            return (
-              <li key={index}>
-                <a
-                  id={item.link_title as string}
-                  href={link.url}
-                  target="_blank"
-                >
-                  {item.link_title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {page.data.external_link[0]?.link_title && (
+        <div className={style.riferimenti}>
+          <h2>Riferimenti</h2>
+          <ul>
+            {page.data.external_link.map((item, index) => {
+              const link: any = item.link;
+              console.log(link, "link");
+              return (
+                <li key={index}>
+                  <a
+                    id={item.anchorid as string}
+                    href={link.url}
+                    target="_blank"
+                  >
+                    {item.link_title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
       <SocialShare url={params.uid} title={page.data.title as string} />
     </main>
   );

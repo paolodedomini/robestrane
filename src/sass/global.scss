@@ -36,18 +36,7 @@ p {
   color: grey;
   font-weight: 300;
 }
-button {
-  border-radius: 0;
-  border: none;
-  padding: 1rem 2rem;
-  margin-right: 0;
-  margin-left: auto;
-  cursor: pointer;
-  &:disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-}
+
 .subtitle {
   font-size: 19px;
   font-family: var(--font-main);
