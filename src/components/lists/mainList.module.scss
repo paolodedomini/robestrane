@@ -42,16 +42,25 @@
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-main);
+  color: rgb(169, 169, 169);
+  .pageNumber {
+    font-size: 2rem;
+    font-weight: 700;
+  }
   button {
     background: transparent;
     border: none;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 300;
     font-family: var(--font-main);
     text-align: center;
     width: 112px;
     display: block;
     cursor: pointer;
+    position: relative;
+    top: 5px;
   }
 }

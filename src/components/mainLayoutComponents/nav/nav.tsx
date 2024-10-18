@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import navigation from "../../../../public/data/navigation.json";
 import { useLenis } from "lenis/react";
 import genericData from "../../../../public/data/generic.json";
+import Form from "../../form/netlifyForm";
 
 function NavBar() {
   const pathN = usePathname();
@@ -106,7 +107,7 @@ function NavBar() {
               key="mobileMenu"
               className={style.navMobile}
               initial={{ x: "100%" }}
-              animate={{ x: 0 }}
+              animate={{ x: "0%" }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
@@ -117,15 +118,19 @@ function NavBar() {
                 <RxCross2 />
               </div>
               <a href="/">
-                <img
-                  src={"/image/logo.svg"}
-                  width={88}
-                  height={95}
-                  alt="logo"
-                />
+                {
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    className={style.navMobile__logo}
+                    src={"/image/logo.svg"}
+                    width={88}
+                    height={95}
+                    alt="logo"
+                  />
+                }
               </a>
 
-              <ul className={style.navMobile__nav}>
+              {/*   <ul className={style.navMobile__nav}>
                 {mainNav.map((item, index) => (
                   <li
                     className={`${
@@ -145,10 +150,17 @@ function NavBar() {
                     </a>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
+              <h2>Chi siamo?</h2>
+              <p>
+                Siamo quelli che hanno idee strane su cose strane, le scriviamo
+                qui
+              </p>
               <hr style={{ width: "50%" }} />
+
               <div className={style.navMobile__generic}>
-                Via della Stazione 27, Barga - 0583 711372 - info@vtservices.it
+                <p>Se hai da dirci qualcosa questo è il posto giusto</p>
+                <Form />
               </div>
             </motion.div>
           )}

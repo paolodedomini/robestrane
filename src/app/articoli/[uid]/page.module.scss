@@ -18,14 +18,17 @@
     position: relative;
     width: 80%;
     margin: -110px auto 50px auto;
+    padding-top: 1rem;
   }
   p {
     font-size: 1.2rem;
     color: grey;
     font-weight: 300;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 13px auto;
     line-height: 1.6;
+    padding: 0 2rem;
+    border-left: 1px dotted #aaaaaa;
   }
   a {
     color: black;
@@ -33,7 +36,9 @@
   }
   .riferimenti {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background: #e9e9e9;
     h2 {
       font-family: var(--font-main);
     }

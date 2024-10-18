@@ -46,6 +46,7 @@ export default async function Page({ params }: { params: Params }) {
       )}
       <h1>{page.data.title}</h1>
       <PrismicRichText field={page.data.article} components={components} />
+
       {page.data.external_link[0]?.link_title && (
         <div className={style.riferimenti}>
           <h2>Riferimenti</h2>

@@ -89,6 +89,7 @@ const MainList = memo(function MainList({
           >
             <FiChevronLeft />
           </button>
+          <div className={style.pageNumber}>{page}</div>
           <button
             onClick={() => {
               setPage((prevPage) => {
