@@ -37,9 +37,9 @@ const CookieConsentBanner = () => {
         Questo sito utilizza cookies per migliorare l&apos;esperienza utente
       </h2>
       <p>
-        Clicca su accetta per continuare, o consulta la nostra{" "}
-        <a href="/cookie">cookie policy</a> e{" "}
-        <a href="/privacy">privacy policy</a>
+        Non tracciamo dati personali, ma utilizziamo cookies per migliorare la
+        tua esperienza utente. Ci impegnamo a non divulgare a terzi nessuna
+        informazione inviataci tramite il form di contatto.
       </p>
       <button onClick={handleAccept}>Accetta</button>
       <button onClick={handleReject}>Rifiuta</button>

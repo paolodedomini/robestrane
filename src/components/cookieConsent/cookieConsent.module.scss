@@ -1,26 +1,29 @@
 .wrapperCookie {
   position: fixed;
-  background-color: $darkblue;
+  background-color: rgb(208, 208, 208);
   width: 100%;
   max-width: 440px;
   bottom: 2rem;
   z-index: 1000;
   padding: 2rem;
-  color: white;
+  color: rgb(0, 0, 0);
   animation: slideIn 1s;
   p {
-    color: white;
+    font-size: 1rem;
+    color: rgb(55, 55, 55);
+    font-family: var(--font-paragraph);
   }
   h2 {
     text-transform: uppercase;
   }
   button {
     background-color: $navyBlue;
-    color: white;
+    color: rgb(255, 255, 255);
     margin-right: 1rem;
+    padding: 0.5rem 1rem;
   }
   a {
-    color: white;
+    color: rgb(0, 0, 0);
   }
 }
 
