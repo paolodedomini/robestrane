@@ -5,19 +5,13 @@ import {
   PrismicRichText,
   JSXMapSerializer,
   PrismicImage,
-  LinkProps,
 } from "@prismicio/react";
 import SocialShare from "@/components/socialShare/socialShare";
-
 import style from "./page.module.scss";
-import { Url } from "next/dist/shared/lib/router/router";
-import { LinkField } from "@prismicio/client";
+import ScrollToId from "@/components/scroll/scrollToId";
 
 type Params = { uid: string };
-type TExternalLink = {
-  link_type: string;
-  url: string;
-};
+
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
@@ -45,6 +39,7 @@ export default async function Page({ params }: { params: Params }) {
         </div>
       )}
       <h1>{page.data.title}</h1>
+      <ScrollToId id="socialShare" />
       <PrismicRichText field={page.data.article} components={components} />
 
       {page.data.external_link[0]?.link_title && (
@@ -69,6 +64,7 @@ export default async function Page({ params }: { params: Params }) {
           </ul>
         </div>
       )}
+      <h2 className={style.shareTitle}>ShareMe, if you dare...</h2>
       <SocialShare url={params.uid} title={page.data.title as string} />
     </main>
   );

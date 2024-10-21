@@ -15,8 +15,29 @@
   align-items: center;
   justify-content: center;
   background-color: $blue;
-
   svg {
     color: white;
+  }
+}
+.wrapperGoto {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  &__goto {
+    font-size: 2rem;
+    background-color: $blue;
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 48px;
+    svg {
+      color: white;
+      position: relative;
+      top: -2px;
+      left: -2px;
+    }
   }
 }

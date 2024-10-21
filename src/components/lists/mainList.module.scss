@@ -7,6 +7,9 @@
   align-items: flex-start;
   font-family: var(--font-main);
   position: relative;
+  @media #{$landscape} {
+    margin: 1rem;
+  }
 
   li {
     font-size: 80px;
@@ -17,8 +20,17 @@
     transition: all 0.3s ease-in-out;
     display: flex;
     align-items: flex-start;
+    @media #{$landscape} {
+      font-size: 40px;
+    }
+    @media #{$phone} {
+      font-size: 25px;
+    }
     img {
       margin-top: 1rem;
+      @media #{$landscape} {
+        margin-top: 0rem;
+      }
     }
     &.active {
       background: rgba(255, 255, 255);

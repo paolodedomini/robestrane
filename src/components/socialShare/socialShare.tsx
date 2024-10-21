@@ -20,7 +20,7 @@ import {
 import style from "./socialShare.module.scss";
 function SocialShare({ url, title }: { url: string; title: string }) {
   return (
-    <div className={style.socialBar}>
+    <div className={style.socialBar} id="socialShare">
       <EmailShareButton
         url={process.env.NEXT_PUBLIC_BASE_URL + url}
         subject={title}

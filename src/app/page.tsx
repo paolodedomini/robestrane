@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "./page.module.scss";
-import { createClient } from "@/prismicio";
-import Link from "next/link";
+import LoaderSite from "@/components/loaders/loader";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import MainList from "@/components/lists/mainList";
@@ -48,7 +47,7 @@ export default function Home({ params }: { params: any }) {
           totalPages={post.total_pages}
         />
       ) : (
-        <p>Loading...</p>
+        <LoaderSite />
       )}
 
       {postImage && (

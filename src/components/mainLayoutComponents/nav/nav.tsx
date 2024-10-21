@@ -61,7 +61,9 @@ function NavBar() {
               <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             )}
           </Link>
-          <span>&#125; Pensieri strani su robe strane</span>
+
+          <span>&#125;</span>
+          <span> Pensieri strani su robe strane</span>
         </div>
         <div
           className={`${style.mainNavBar__navBlock} ${style.mainNavBar__inner}`}
