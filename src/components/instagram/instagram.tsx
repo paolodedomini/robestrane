@@ -26,7 +26,6 @@ export default async function InstagramPost({
   const dataRes: Tdata = await data.json();
 
   if (!dataRes) return <div>loading</div>;
-  console.log(dataRes, "data");
 
   return (
     <div className={styles.wrapperInstagram}>

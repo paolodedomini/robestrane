@@ -34,7 +34,6 @@ export default function Home({ params }: { params: any }) {
     }
   }, [categoryByUrlParams, page]);
 
-  console.log(post, "postaa");
   return (
     <main className={styles.main}>
       {post.results ? (

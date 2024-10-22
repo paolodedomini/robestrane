@@ -23,7 +23,7 @@ const MainList = memo(function MainList({
   const dataImage = data.generics.categorie;
   const [active, setActive] = useState<number | null>(null);
   const router = useRouter();
-  console.log(list, "list");
+
   return (
     <>
       <AnimatePresence mode="wait">

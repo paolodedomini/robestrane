@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Params }) {
       );
     },
   };
-  console.log(page, "page");
+
   return (
     <main className={style.blogPage}>
       {page.data.mainimage.url && (
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: Params }) {
           <ul>
             {page.data.external_link.map((item, index) => {
               const link: any = item.link;
-              console.log(link, "link");
+
               return (
                 <li key={index}>
                   <a
