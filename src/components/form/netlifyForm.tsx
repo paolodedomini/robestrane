@@ -26,8 +26,6 @@ function Form() {
   const t = generic.FormContatti;
   const [nome, setNome] = useState<string>("");
   const [errorNome, setErrorNome] = useState<string>("");
-  const [tel, setTel] = useState<string>("");
-  const [errorTel, setErrorTel] = useState<string>("");
   const [mail, setMail] = useState<string>("");
   const [errorMail, setErrorMail] = useState<string>("");
   const [messaggio, setMessaggio] = useState<string>("");
@@ -43,12 +41,6 @@ function Form() {
     } else {
       setErrorNome("");
     }
-    if (tel.length < 8 && tel.length > 0) {
-      setErrorTel(t.err_tel);
-    } else {
-      setErrorTel("");
-    }
-
     if (mail.length < 6 && mail.length > 0) {
       setErrorMail(t.err_email);
     } else if (mail.length > 0 && !mail.includes("@")) {
@@ -66,7 +58,6 @@ function Form() {
     //controllo sul submit del form netlify
     if (
       nome.length < 3 ||
-      tel.length < 3 ||
       mail.length < 3 ||
       !mail.includes("@") ||
       messaggio.length < 10 ||
@@ -76,7 +67,7 @@ function Form() {
     } else {
       setSubmit(true);
     }
-  }, [nome, mail, messaggio, tel, privacy]);
+  }, [nome, mail, messaggio, privacy]);
 
   const handleFormSubmit = async (event: any) => {
     event.preventDefault();
@@ -92,7 +83,6 @@ function Form() {
       });
       if (res.status === 200) {
         setNome("");
-        setTel("");
         setMail("");
         setMessaggio("");
         setStatus("ok");
@@ -130,20 +120,7 @@ function Form() {
           required
         />
       </p>
-      <p>
-        <label htmlFor="telefono">{t.tel}</label> <br />
-        <input
-          onChange={(e) => {
-            setTel(e.target.value);
-          }}
-          placeholder={t.tel}
-          type="text"
-          name="telefono"
-          value={tel}
-          id="telefono"
-          required
-        />
-      </p>
+
       <p>
         <label htmlFor="youremail">{t.email}</label> <br />
         <input
@@ -187,7 +164,6 @@ function Form() {
       </p>
       <div style={{ height: "20px" }}>
         {errorNome && <p className={style.error}>{errorNome}</p>}
-        {errorTel && <p className={style.error}>{errorTel}</p>}
         {errorMail && <p className={style.error}>{errorMail}</p>}
         {errorMessaggio && <p className={style.error}>{errorMessaggio}</p>}
       </div>
