@@ -53,7 +53,9 @@ export default async function Page({ params }: { params: Params }) {
         {page.data.title}
       </h1>
       <ScrollToId id="socialShare" />
-      <PrismicRichText field={page.data.article} components={components} />
+      <div className={style.contentBlog}>
+        <PrismicRichText field={page.data.article} components={components} />
+      </div>
 
       {page.data.external_link[0]?.link_title && (
         <div className={style.riferimenti}>
