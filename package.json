@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-image-export-optimizer",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine"

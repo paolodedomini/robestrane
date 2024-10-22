@@ -16,9 +16,9 @@ Checklist con fondamentali per pubblicazione
 
 # Codice
 
-- [ ] Verificare i metadata (Open Graph, Twitter Card)
+- [x] Verificare i metadata (Open Graph, Twitter Card)
 - [ ] Verificare gli script per Analitycs vari
 - [ ] Verificare funzionamento dei Form
 - [ ] Controllo mail invio form
-- [ ] Sitemap
-- [ ] Robots.txt
+- [x] Sitemap
+- [x] Robots.txt

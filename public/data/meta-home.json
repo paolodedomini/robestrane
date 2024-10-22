@@ -1,22 +1,22 @@
 {
     "it": {
         "metaHtml": {
-            "title": "Studio dentistico Dott. Vincenti",
-            "description": "Lo studio dentistico Dott. Vincenti, situato a Prato, si avvale di uno staff di professionisti qualificati e di attrezzature moderne per la prevenzione e la cura delle malattie della bocca e per le riabilitazioni su impianti.",
-            "keywords": "dentista, Prato, dott. Vincenti, studio dentistico",
+            "title": "Robestrane.it",
+            "description": "Robestrane, sito ufficiale di robe strane pensate strane",
+            "keywords": "letteratura, weird, design, game, musica, cinema, stranezze",
             "openGraph": {
-                "title": "Studio dentistico Dott. Vincenti",
-                "description": "Lo studio dentistico Dott. Vincenti, situato a Prato, si avvale di uno staff di professionisti qualificati e di attrezzature moderne per la prevenzione e la cura delle malattie della bocca e per le riabilitazioni su impianti.",
+                "title": "Robestrane.it",
+                "description": "Robestrane, sito ufficiale di robe strane pensate strane",
                 "type": "website",
                 "locale": "it_IT",
-                "url": "https://dottvincenti.dentistiprato.com/",
-                "siteName": "Studio dentistico Dott. Vincenti",
+                "url": "https://robestrane.it",
+                "siteName": "Robestrane",
                 "images": [
                     {
-                        "url": "https://dottvincenti.dentistiprato.com/image/opengraph-image.jpg",
+                        "url": "https://robestrane.it/image/opengraph-image.jpg",
                         "width": 1200,
                         "height": 630,
-                        "alt": "simple website"
+                        "alt": "Robestrane.it"
                     }
                 ]
             }
@@ -26,22 +26,22 @@
             "@type": "Organization",
             "image": [
                 "https://dottvincenti.dentistiprato.com/image/4_3graph.jpg",
-                "https://dottvincenti.dentistiprato.com/image/mainimage.jpg"
+                "https://dottvincenti.dentistiprato.com/image/opengraph-image.jpg"
             ],
-            "name": "Studio dentistico Dott. Vincenti",
+            "name": "robestrane",
             "address": [
                 {
                     "@type": "PostalAddress",
-                    "streetAddress": "Via Torelli, 57, 59100 Prato PO",
-                    "addressLocality": "Prato",
-                    "addressRegion": "Prato",
-                    "postalCode": "59100",
+                    "streetAddress": "Via del Terzolle 41",
+                    "addressLocality": "Firenze",
+                    "addressRegion": "Firenze",
+                    "postalCode": "50127",
                     "addressCountry": "IT"
                 }
             ],
-            "url": "https://dottvincenti.dentistiprato.com/",
-            "telephone": "+390574514380",
-            "email": "info@dottvincenti.dentistiprato.com"
+            "url": "https://robestrane.it",
+            "telephone": "+393205546397",
+            "email": "paolodedomini@gmail.com"
         }
     }
 }
