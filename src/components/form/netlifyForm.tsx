@@ -149,11 +149,11 @@ function Form() {
       </p>
       <p className={style.privacy}>
         <label htmlFor="privacy" className={style.privacy__label}>
-          Accetto i termini sulla&nbsp;
-          <a href={t.privacy_url} target="_blank">
-            {t.privacy}
+          <a href={t.privacy_url} target="_blank" title="campo obbligatorio">
+            {t.privacy + "*"}
           </a>
         </label>
+        &nbsp;
         <input
           onChange={(e) => setPrivacy(e.target.checked)}
           id="privacy"

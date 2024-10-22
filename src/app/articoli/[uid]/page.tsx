@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { createClient } from "@/prismicio";
+import ExportedImage from "next-image-export-optimizer";
 import {
   PrismicRichText,
   JSXMapSerializer,
@@ -9,10 +10,13 @@ import {
 import SocialShare from "@/components/socialShare/socialShare";
 import style from "./page.module.scss";
 import ScrollToId from "@/components/scroll/scrollToId";
+import genericData from "../../../../public/data/generic.json";
 
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
+  const categorie = genericData.generics.categorie;
+
   const client = createClient();
   const page = await client
     .getByUID("post", params.uid)
@@ -30,7 +34,7 @@ export default async function Page({ params }: { params: Params }) {
       );
     },
   };
-
+  console.log(page, "page");
   return (
     <main className={style.blogPage}>
       {page.data.mainimage.url && (
@@ -38,7 +42,16 @@ export default async function Page({ params }: { params: Params }) {
           <PrismicImage field={page.data.mainimage} width={1000} height={400} />
         </div>
       )}
-      <h1>{page.data.title}</h1>
+      <h1>
+        <ExportedImage
+          src={`/image/${page.tags[0].toLowerCase()}.svg`}
+          alt="logo"
+          width={88}
+          height={95}
+          className={style.immagineCategoria}
+        />
+        {page.data.title}
+      </h1>
       <ScrollToId id="socialShare" />
       <PrismicRichText field={page.data.article} components={components} />
 

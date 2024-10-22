@@ -11,6 +11,12 @@
       height: 200px;
     }
   }
+  .immagineCategoria {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    margin-right: 1rem;
+  }
   img {
     display: block;
   }
@@ -22,7 +28,8 @@
     position: relative;
     width: 80%;
     margin: -70px auto 20px auto;
-    padding-top: 1rem;
+    padding-top: 2rem;
+    line-height: 1;
     @media #{$phone} {
       font-size: 2rem;
     }
