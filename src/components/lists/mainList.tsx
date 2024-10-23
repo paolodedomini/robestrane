@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import style from "./mainList.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -23,13 +23,24 @@ const MainList = memo(function MainList({
   const dataImage = data.generics.categorie;
   const [active, setActive] = useState<number | null>(null);
   const router = useRouter();
+  const [changePage, setChangePage] = useState<number | string | undefined>(
+    page
+  );
 
+  useEffect(() => {
+    setChangePage((prev) => {
+      if (prev !== page) {
+        return page;
+      }
+      return categoryByUrlParams || undefined;
+    });
+  }, [page, categoryByUrlParams]);
   return (
     <>
       <AnimatePresence mode="wait">
         <motion.ul
           className={`${style.mainList} `}
-          key={categoryByUrlParams}
+          key={changePage}
           exit={{ opacity: 0 }}
         >
           {list.length && list ? (

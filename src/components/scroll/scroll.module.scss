@@ -29,12 +29,12 @@
   margin-bottom: 30px;
   &__goto {
     font-size: 2rem;
-    background-color: $blue;
+    background-color: white;
     padding: 0.5rem;
     border-radius: 50%;
     height: 48px;
     svg {
-      color: white;
+      color: $blue;
       position: relative;
       top: -2px;
       left: -2px;
