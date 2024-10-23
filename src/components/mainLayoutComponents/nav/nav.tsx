@@ -63,7 +63,7 @@ function NavBar() {
           </Link>
 
           <span>&#125;</span>
-          <span> Pensieri strani su robe strane</span>
+          <span>Seghe mentali su robe strane</span>
         </div>
         <div
           className={`${style.mainNavBar__navBlock} ${style.mainNavBar__inner}`}

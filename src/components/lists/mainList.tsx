@@ -31,8 +31,10 @@ const MainList = memo(function MainList({
     setChangePage((prev) => {
       if (prev !== page) {
         return page;
+      } else {
+        setPage(1);
+        return categoryByUrlParams || undefined;
       }
-      return categoryByUrlParams || undefined;
     });
   }, [page, categoryByUrlParams]);
   return (
@@ -61,7 +63,9 @@ const MainList = memo(function MainList({
                     setPostImage("");
                     setActive(null);
                   }}
-                  onClick={() => router.push(`/articoli/${item.uid}`)}
+                  onClick={() => {
+                    router.push(`/articoli/${item.uid}`);
+                  }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
