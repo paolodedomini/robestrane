@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import ExportedImage from "next-image-export-optimizer";
 import data from "../../../public/data/generic.json";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-const MainList = memo(function MainList({
+
+const MainList = function MainList({
   list,
   setPostImage,
   categoryByUrlParams,
@@ -124,6 +125,6 @@ const MainList = memo(function MainList({
       )}
     </>
   );
-});
+};
 
 export default MainList;
