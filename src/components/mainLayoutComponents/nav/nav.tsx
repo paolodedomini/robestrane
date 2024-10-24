@@ -62,13 +62,13 @@ function NavBar() {
     >
       <nav className={`${style.mainNavBar}`}>
         <div className={style.mainNavBar__logo}>
-          <Link href="/">
+          <a href="/">
             {!scrolling ? (
               <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             ) : (
               <img src={"/image/logo.svg"} width={88} height={95} alt="logo" />
             )}
-          </Link>
+          </a>
 
           <span>&#125;</span>
           <span>{sottotitolo}</span>
@@ -87,12 +87,7 @@ function NavBar() {
                   className={`${pathN.includes(item || "") && style.activeLink}`}
                   key={index}
                 >
-                  <Link
-                    href={{
-                      pathname: "/",
-                      query: { filter: item },
-                    }}
-                  >
+                  <a href={`/${"?filter=" + item}`}>
                     <span>
                       <ExportedImage
                         src={"/image/" + imageData?.image}
@@ -102,7 +97,7 @@ function NavBar() {
                       />
                     </span>{" "}
                     <div>{item}</div>
-                  </Link>
+                  </a>
                 </li>
               );
             })}

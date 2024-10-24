@@ -40,10 +40,7 @@ const MainList = function MainList({
   }, [page, categoryByUrlParams]);
 
   //se cambio categoria resetto la pagina al numero 1
-  useEffect(() => {
-    setPage(1);
-  }, [categoryByUrlParams]);
-
+  console.log(list);
   return (
     <>
       <AnimatePresence mode="wait">

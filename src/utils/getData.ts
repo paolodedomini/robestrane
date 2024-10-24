@@ -39,7 +39,7 @@ async function getPostFiltered(category: string | null, pageSize: number, pageNu
       throw new Error("No category found");
     }
     if (getPostByCategory) {
-
+      console.log(getPostByCategory, 'getPostByCategory');
       setData(getPostByCategory);
     }
   } catch (error) {

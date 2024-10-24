@@ -20,19 +20,18 @@ export default function Home({ params }: { params: any }) {
   const [post, setPost] = useState<any>([]);
   const [page, setPage] = useState(1);
   const [postImage, setPostImage] = useState<string>("");
+  const [category, setCategory] = useState<string | null>(categoryByUrlParams);
 
   useEffect(() => {
-    if (!categoryByUrlParams) {
+    if (!category) {
       getPostDataByPage(5, page, setPost);
-    } else {
-      getPostFiltered(
-        capitalizeFirstLetter(categoryByUrlParams),
-        5,
-        page,
-        setPost
-      );
     }
-  }, [categoryByUrlParams, page]);
+  }, [category, page]);
+
+  useEffect(() => {
+    setPage(1);
+    getPostFiltered(capitalizeFirstLetter(category), 5, page, setPost);
+  }, [category]);
 
   return (
     <main className={styles.main}>
@@ -40,7 +39,7 @@ export default function Home({ params }: { params: any }) {
         <MainList
           list={post.results}
           setPostImage={setPostImage}
-          categoryByUrlParams={categoryByUrlParams}
+          categoryByUrlParams={category}
           page={page}
           setPage={setPage}
           totalPages={post.total_pages}
