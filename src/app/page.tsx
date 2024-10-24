@@ -23,16 +23,19 @@ export default function Home({ params }: { params: any }) {
   const [category, setCategory] = useState<string | null>(categoryByUrlParams);
 
   useEffect(() => {
+    console.log(category, "category");
     if (!category) {
       getPostDataByPage(5, page, setPost);
     }
-  }, [category, page]);
+  }, [page]);
 
   useEffect(() => {
-    setPage(1);
-    getPostFiltered(capitalizeFirstLetter(category), 5, page, setPost);
+    if (category) {
+      setPage(1);
+      getPostFiltered(capitalizeFirstLetter(category), 5, page, setPost);
+    }
   }, [category]);
-
+  console.log(!category, "post");
   return (
     <main className={styles.main}>
       {post.results ? (

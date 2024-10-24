@@ -21,12 +21,7 @@ function NavBar() {
 
   const filters = navigation["filters"];
   const mainNav = navigation["main"];
-  function isHome() {
-    if (pathN === "/") {
-      return true;
-    }
-    return false;
-  }
+
   function handleScroll() {
     if (window.scrollY > 100) {
       setScrolling(true);
