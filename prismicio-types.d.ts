@@ -27,16 +27,6 @@ export interface PostDocumentDataExternalLinkItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
-
-  /**
-   * anchorId field in *post → external link*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: id per ancora di testo
-   * - **API ID Path**: post.external_link[].anchorid
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  anchorid: prismic.KeyTextField;
 }
 
 type PostDocumentDataSlicesSlice = never;
@@ -68,6 +58,19 @@ interface PostDocumentData {
   article: prismic.RichTextField;
 
   /**
+   * categories field in *post*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: categories
+   * - **API ID Path**: post.categories
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  categories: prismic.SelectField<
+    "Letteratura" | "Design" | "Cinema" | "Musica" | "Games"
+  >;
+
+  /**
    * external link field in *post*
    *
    * - **Field Type**: Group
@@ -88,6 +91,17 @@ interface PostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   mainimage: prismic.ImageField<never>;
+
+  /**
+   * Video field in *post*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: Video
+   * - **API ID Path**: post.video
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
 
   /**
    * Slice Zone field in *post*

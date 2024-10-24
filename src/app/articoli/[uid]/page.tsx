@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Params }) {
       );
     },
   };
-  console.log(page);
+
   return (
     <main className={style.blogPage}>
       {page.data.mainimage.url && (
@@ -53,9 +53,17 @@ export default async function Page({ params }: { params: Params }) {
         {page.data.title}
       </h1>
       <ScrollToId id="socialShare" />
-      <div className={style.contentBlog}>
-        <PrismicRichText field={page.data.article} components={components} />
-      </div>
+      {page.data.article && (
+        <div className={style.contentBlog}>
+          <PrismicRichText field={page.data.article} components={components} />
+        </div>
+      )}
+      {page.data.video.html && (
+        <div
+          className={style.ytEmbed}
+          dangerouslySetInnerHTML={{ __html: page.data.video.html }}
+        />
+      )}
 
       {page.data.external_link[0]?.link_title && (
         <div className={style.riferimenti}>
@@ -63,14 +71,10 @@ export default async function Page({ params }: { params: Params }) {
           <ul>
             {page.data.external_link.map((item, index) => {
               const link: any = item.link;
-
+              console.log(link);
               return (
                 <li key={index}>
-                  <a
-                    id={item.anchorid as string}
-                    href={link.url}
-                    target="_blank"
-                  >
+                  <a href={link.url} target="_blank">
                     {item.link_title}
                   </a>
                 </li>
