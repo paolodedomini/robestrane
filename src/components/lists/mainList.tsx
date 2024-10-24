@@ -37,12 +37,15 @@ const MainList = memo(function MainList({
       }
     });
   }, [page, categoryByUrlParams]);
+
   return (
     <>
       <AnimatePresence mode="wait">
         <motion.ul
           className={`${style.mainList} `}
           key={changePage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
           {list.length && list ? (
@@ -69,7 +72,7 @@ const MainList = memo(function MainList({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.3,
                     delay: index * 0.2,
                     ease: "linear",
                   }}

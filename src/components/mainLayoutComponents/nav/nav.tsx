@@ -10,12 +10,12 @@ import navigation from "../../../../public/data/navigation.json";
 import { useLenis } from "lenis/react";
 import genericData from "../../../../public/data/generic.json";
 import Form from "../../form/netlifyForm";
-
+import { randomNumber } from "@/utils/generic";
 function NavBar() {
   const pathN = usePathname();
   const [mobile, setMobile] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-
+  const [sottotitolo, setSottotitolo] = useState("");
   // funzione per gestire lo scroll con smooth scroll LENIS
   const scroll = useLenis();
 
@@ -46,8 +46,16 @@ function NavBar() {
     setMobile(false);
   }, [pathN]);
 
-  const categorie = genericData.generics.categorie;
+  useEffect(() => {
+    setSottotitolo(
+      genericData.sottotitoliSito[
+        randomNumber(0, genericData.sottotitoliSito.length - 1)
+      ]
+    );
+  }, []);
 
+  const categorie = genericData.generics.categorie;
+  const randomTitle = randomNumber(0, genericData.sottotitoliSito.length - 1);
   return (
     <header
       className={`${style.header}  ${scrolling ? style.scrolling : null}`}
@@ -63,7 +71,7 @@ function NavBar() {
           </Link>
 
           <span>&#125;</span>
-          <span>Seghe mentali su robe strane</span>
+          <span>{sottotitolo}</span>
         </div>
         <div
           className={`${style.mainNavBar__navBlock} ${style.mainNavBar__inner}`}
