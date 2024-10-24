@@ -11,7 +11,7 @@ async function getPostDataByPage(pageSize: number, pageNumber: number, setData: 
       filters: [prismic.filter.at('document.type', 'post')],
       pageSize: pageSize,
       page: pageNumber,
-      orderings: [{ field: 'document.first_publication_date', direction: 'asc' }]
+      orderings: [{ field: 'document.first_publication_date', direction: 'desc' }]
     });
     const data = dataPage;
     if (data) {
