@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Params }) {
       );
     },
   };
-
+  console.log(page);
   return (
     <main className={style.blogPage}>
       {page.data.mainimage.url && (
