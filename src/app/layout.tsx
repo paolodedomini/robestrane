@@ -5,7 +5,7 @@ import JsonldMetaData from "@/components/metaData/jsonldmetadata";
 import meta from "../../public/data/meta-home.json";
 import Nav from "@/components/mainLayoutComponents/nav/nav";
 import CookieConsentBanner from "@/components/cookieConsent/cookieConsent";
-
+import Script from "next/script";
 import ScrollTop from "@/components/scroll/scrollToTop";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -46,7 +46,11 @@ export default async function RootLayout({
 
         <ScrollTop />
       </body>
-      <GoogleAnalytics gaId="UA-77301206-1" />
+
+      <Script
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "d99e7b32f58e46ac954a5c9f23899a18"}'
+      />
     </html>
   );
 }

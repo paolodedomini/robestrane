@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, use, useEffect, useState } from "react";
 import style from "./mainList.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -29,15 +29,20 @@ const MainList = function MainList({
   );
 
   useEffect(() => {
+    //
     setChangePage((prev) => {
       if (prev !== page) {
         return page;
       } else {
-        setPage(1);
         return categoryByUrlParams || undefined;
       }
     });
   }, [page, categoryByUrlParams]);
+
+  //se cambio categoria resetto la pagina al numero 1
+  useEffect(() => {
+    setPage(1);
+  }, [categoryByUrlParams]);
 
   return (
     <>
