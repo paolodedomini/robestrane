@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import MainList from "@/components/lists/mainList";
 import { getPostFiltered, getPostDataByPage } from "@/utils/getData";
 import { capitalizeFirstLetter } from "@/utils/generic";
+
 /**
  * PAGINA
  * Utilizzare le pagine per fetchare i dati e passarli ai componenti
@@ -35,7 +36,7 @@ export default function Home({ params }: { params: any }) {
       getPostFiltered(capitalizeFirstLetter(category), 5, page, setPost);
     }
   }, [category]);
-  console.log(!category, "post");
+
   return (
     <main className={styles.main}>
       {post.results ? (

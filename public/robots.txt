@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://robestrane.it
+
+# Sitemaps
+Sitemap: https://robestrane.it/sitemap.xml

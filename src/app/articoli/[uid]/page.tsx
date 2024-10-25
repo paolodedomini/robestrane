@@ -8,7 +8,7 @@ import {
   PrismicImage,
 } from "@prismicio/react";
 import SocialShare from "@/components/socialShare/socialShare";
-import style from "./page.module.scss";
+import "./page.scss";
 import ScrollToId from "@/components/scroll/scrollToId";
 import genericData from "../../../../public/data/generic.json";
 
@@ -26,19 +26,17 @@ export default async function Page({ params }: { params: Params }) {
   const components: JSXMapSerializer = {
     heading1: ({ children }) => <h2>{children}</h2>,
     list: ({ children }) => (
-      <ul className={style.listaBlog}>{children.map((child) => child)}</ul>
+      <ul className={"listaBlog"}>{children.map((child) => child)}</ul>
     ),
     oList: ({ children }) => {
-      return (
-        <ul className={style.listaBlog}>{children.map((child) => child)}</ul>
-      );
+      return <ul className={"listaBlog"}>{children.map((child) => child)}</ul>;
     },
   };
 
   return (
-    <main className={style.blogPage}>
+    <main className={"blogPage"}>
       {page.data.mainimage.url && (
-        <div className={style.mainImage}>
+        <div className={"mainImage"}>
           <PrismicImage field={page.data.mainimage} width={1000} height={400} />
         </div>
       )}
@@ -48,30 +46,30 @@ export default async function Page({ params }: { params: Params }) {
           alt="logo"
           width={88}
           height={95}
-          className={style.immagineCategoria}
+          className={"immagineCategoria"}
         />
         {page.data.title}
       </h1>
       <ScrollToId id="socialShare" />
       {page.data.article && (
-        <div className={style.contentBlog}>
+        <div className={"contentBlog"}>
           <PrismicRichText field={page.data.article} components={components} />
         </div>
       )}
       {page.data.video.html && (
         <div
-          className={style.ytEmbed}
+          className={"ytEmbed"}
           dangerouslySetInnerHTML={{ __html: page.data.video.html }}
         />
       )}
 
       {page.data.external_link[0]?.link_title && (
-        <div className={style.riferimenti}>
+        <div className={"riferimenti"}>
           <h2>Riferimenti</h2>
           <ul>
             {page.data.external_link.map((item, index) => {
               const link: any = item.link;
-              console.log(link);
+
               return (
                 <li key={index}>
                   <a href={link.url} target="_blank">
@@ -83,7 +81,7 @@ export default async function Page({ params }: { params: Params }) {
           </ul>
         </div>
       )}
-      <h2 className={style.shareTitle}>ShareMe, if you dare...</h2>
+      <h2 className={"shareTitle"}>ShareMe, if you dare...</h2>
       <SocialShare url={params.uid} title={page.data.title as string} />
     </main>
   );
