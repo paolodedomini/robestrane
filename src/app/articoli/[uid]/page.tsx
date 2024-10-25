@@ -46,7 +46,17 @@ export default async function Page({ params }: { params: Params }) {
     >
       {page.data.mainimage.url && (
         <div className={"mainImage"}>
-          <PrismicImage field={page.data.mainimage} width={1000} height={400} />
+          <PrismicImage
+            field={page.data.mainimage}
+            width={1000}
+            height={400}
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              objectPosition: "top",
+            }}
+          />
         </div>
       )}
       <h1>
