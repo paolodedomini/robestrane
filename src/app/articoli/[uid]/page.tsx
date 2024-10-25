@@ -11,6 +11,7 @@ import SocialShare from "@/components/socialShare/socialShare";
 import "./page.scss";
 import ScrollToId from "@/components/scroll/scrollToId";
 import genericData from "../../../../public/data/generic.json";
+import { Style } from "util";
 
 type Params = { uid: string };
 
@@ -34,7 +35,15 @@ export default async function Page({ params }: { params: Params }) {
   };
 
   return (
-    <main className={"blogPage"}>
+    <main
+      style={{
+        maxWidth: "1000px",
+        width: "100%",
+        margin: "0 auto",
+        boxShadow: "0px 0px 18px #00000024",
+      }}
+      className={"blogPage"}
+    >
       {page.data.mainimage.url && (
         <div className={"mainImage"}>
           <PrismicImage field={page.data.mainimage} width={1000} height={400} />
