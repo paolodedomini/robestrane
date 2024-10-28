@@ -1,7 +1,6 @@
 .mainList {
   max-width: 1300px;
-  margin: 2rem auto;
-  min-height: 60vh;
+  margin: 2rem auto 3rem auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -20,6 +19,7 @@
     transition: all 0.3s ease-in-out;
     display: flex;
     align-items: flex-start;
+
     @media #{$landscape} {
       font-size: 40px;
     }
@@ -42,25 +42,16 @@
       padding: 0 1rem 0 0.5rem;
       border-bottom: 1px dashed transparent;
       padding-bottom: 0;
-      &:hover {
-        padding-bottom: 1rem;
-        border-bottom: 1px dashed rgb(195, 66, 66);
-      }
     }
   }
 }
 .mainListNavigation {
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-main);
   color: rgb(169, 169, 169);
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
 
   .pageNumber {
     font-size: 2rem;

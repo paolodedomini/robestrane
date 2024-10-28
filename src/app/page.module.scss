@@ -9,6 +9,10 @@
   object-position: left;
   top: 50%;
   transform: translateY(-50%);
+
+  @media #{$tablet} {
+    display: none;
+  }
 }
 @keyframes fadeIn {
   0% {
