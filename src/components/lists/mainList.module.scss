@@ -6,6 +6,7 @@
   align-items: flex-start;
   font-family: var(--font-main);
   position: relative;
+
   @media #{$landscape} {
     margin: 1rem;
   }

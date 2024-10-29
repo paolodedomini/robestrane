@@ -13,6 +13,7 @@ const MainList = function MainList({
   page,
   setPage,
   totalPages,
+  setAnimation,
 }: {
   list: [];
   setPostImage: React.Dispatch<React.SetStateAction<string>>;
@@ -20,6 +21,7 @@ const MainList = function MainList({
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
   totalPages: number;
+  setAnimation: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
   const dataImage = data.generics.categorie;
   const [active, setActive] = useState<number | null>(null);
@@ -64,10 +66,12 @@ const MainList = function MainList({
                   onMouseEnter={() => {
                     setPostImage(item.data.mainimage.url);
                     setActive(index);
+                    setAnimation(item.tags[0]);
                   }}
                   onMouseLeave={() => {
                     setPostImage("");
                     setActive(null);
+                    setAnimation(null);
                   }}
                   onClick={() => {
                     router.push(`/articoli/${item.uid}`);
