@@ -35,6 +35,9 @@
     }
     &.active {
       background: rgba(255, 255, 255);
+      @media #{$laptop} {
+        background: #ffffff8a;
+      }
     }
     span {
       display: block;

@@ -11,8 +11,7 @@ import SocialShare from "@/components/socialShare/socialShare";
 import "./page.scss";
 import ScrollToId from "@/components/scroll/scrollToId";
 import genericData from "../../../../public/data/generic.json";
-import { Style } from "util";
-
+import MainBlog from "@/components/mainLayoutComponents/blogMainContainer/main";
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
@@ -35,40 +34,11 @@ export default async function Page({ params }: { params: Params }) {
   };
 
   return (
-    <main
-      style={{
-        maxWidth: "1000px",
-        width: "100%",
-        margin: "0 auto",
-        boxShadow: "0px 0px 18px #00000024",
-      }}
-      className={"blogPage"}
+    <MainBlog
+      title={page.data.title}
+      image={page.data.mainimage}
+      urlIcon={`/image/${page.tags[0].toLowerCase()}.svg`}
     >
-      {page.data.mainimage.url && (
-        <div className={"mainImage"}>
-          <PrismicImage
-            field={page.data.mainimage}
-            width={1000}
-            height={400}
-            style={{
-              width: "100%",
-              height: "400px",
-              objectFit: "cover",
-              objectPosition: "top",
-            }}
-          />
-        </div>
-      )}
-      <h1>
-        <ExportedImage
-          src={`/image/${page.tags[0].toLowerCase()}.svg`}
-          alt="logo"
-          width={88}
-          height={95}
-          className={"immagineCategoria"}
-        />
-        {page.data.title}
-      </h1>
       <ScrollToId id="socialShare" />
       {page.data.article && (
         <div className={"contentBlog"}>
@@ -102,7 +72,7 @@ export default async function Page({ params }: { params: Params }) {
       )}
       <h2 className={"shareTitle"}>ShareMe, if you dare...</h2>
       <SocialShare url={params.uid} title={page.data.title as string} />
-    </main>
+    </MainBlog>
   );
 }
 //METADATA
